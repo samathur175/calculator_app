@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { DigitButton } from ".DigitButton.js";
+import { OperationButton } from "./OperationButton";
 import "./styles.css";
 
 export const ACTIONS = {
@@ -27,7 +28,7 @@ function App() {
     {}
   );
 
-  dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: 1 } });
+  // ({ type: ACTIONS.ADD_DIGIT, payload: { digit: 1 } });
 
   return (
     <>
@@ -40,32 +41,25 @@ function App() {
         </div>
         <button className="span-two">AC</button>
         <button>DEL</button>
-        <DigitButton digit="÷" dispatch={dispatch} />
+        <OperationButton operation="÷" dispatch={dispatch} />
         <DigitButton digit="1" dispatch={dispatch} />
         <DigitButton digit="2" dispatch={dispatch} />
         <DigitButton digit="3" dispatch={dispatch} />
-        <button>*</button>
+        <OperationButton operation="*" dispatch={dispatch} />
         <DigitButton digit="4" dispatch={dispatch} />
         <DigitButton digit="5" dispatch={dispatch} />
         <DigitButton digit="6" dispatch={dispatch} />
-        <button>+</button>
+        <OperationButton operation="+" dispatch={dispatch} />
         <DigitButton digit="7" dispatch={dispatch} />
         <DigitButton digit="8" dispatch={dispatch} />
         <DigitButton digit="9" dispatch={dispatch} />
-        <button>-</button>
+        <OperationButton operation="-" dispatch={dispatch} />
         <DigitButton digit="." dispatch={dispatch} />
         <DigitButton digit="0" dispatch={dispatch} />
-        <button className="span-two equal-btn">=</button>
+        <OperationButton digit="=" dispatch={dispatch} />
       </div>
     </>
   );
 }
 
 export default App;
-
-
-
-
-
-
-Stopped at 15:00 minute
